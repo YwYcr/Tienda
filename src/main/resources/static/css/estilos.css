@@ -1,0 +1,35 @@
+a {
+    background-color: blue;
+    color: white;
+}
+
+a:hover{
+     background-color: white;
+     font-size: 22px;
+    color: blue;
+}
+
+header{
+    text-align: center;
+    background-color: black;
+    color: white
+}
+article header{
+    text-align: center;
+    background-color: green;
+    color: white
+}
+
+figcaption{
+    color: red;
+}
+
+#aviso{
+    background-color: blue;
+    
+}
+
+.producto{
+    background-color: yellow;
+    
+}
