@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>TechShop</title>
+        <meta charset="UTF-8"/>      
+    </head>
+    <body>
+
+        <header th:fragment="header" class="header">
+                  
+        
+
+        <nav class='nav'>
+            <a href="@{/}" class='nav-link logo'>TechShop</a>
+            <ul class='nav-menu'>
+                <li class='nav-menu-item'><a class='nav-link nav-menu-link' th:href="@{/cliente/listado}">
+                        Cliente</a></li>
+                <li class='nav-menu-item'><a class='nav-link nav-menu-link' th:href="@{/articulo/listado}">
+                        Articulo</a></li>
+                <li class='nav-menu-item'><a class='nav-link nav-menu-link' th:href="@{/categoria/listado}">
+                        Categoria</a></li>
+            </ul>
+
+        </nav>
+
+</header>
+
+
+
+
+
+
+
+        <footer th:fragment="footer">
+            <p>&COPY; Derechos Reservados 2022</p>            
+        </footer>
+    </body>
+</html>

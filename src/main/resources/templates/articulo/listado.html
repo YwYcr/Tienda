@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html
+    xmlns:th="http://wwww.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header" class="header"/>
+
+        <div class="contenido">
+            <h2>Listado de articulos</h2>
+            <a th:href="@{/articulo/nuevo}">Nuevo Articulo</a>
+            <div th:if="${articulos !=null and !articulos.empty}">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Descripcion</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="articulo : ${articulos}">
+                            <td>[[${articulo.descripcion}]]</td>
+                            <td style="text-align: right">[[${#numbers.formatDecimal(articulo.precio,3,2)}]]</td>
+                            <td><a th:href="@{/carrito/agregar/} + ${articulo.idArticulo}">Comprar</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div th:if="${articulos ==null and articulos.empty}">
+                <H2>No se tienen articulos que mostrar!</h2>
+            </div>
+        </div>
+        <footer th:replace="layout/plantilla :: footer"/>
+    </body>
+</html>
