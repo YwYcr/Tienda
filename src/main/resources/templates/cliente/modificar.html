@@ -4,13 +4,13 @@
     xmlns:th="http://www.thymeleaf.org"
     xmlns="http://www.w3.org/1999/xhtml">
 
-    <head>
+    <head th:replace="layout/plantilla :: head">
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
     </head>
     <body>
-        <h1>Datos de Cliente</h1>    
-        <a th:href="@{/}">Regresar</a>
+        <h1> [[#{cliente.datos}]]</h1>    
+        <a th:href="@{/cliente/listado}">[[#{accion.regresar}]]</a>
         <hr/>
         <form th:action="@{/cliente/guardar}"
               method="post"
@@ -18,22 +18,22 @@
             
             <input type="hidden" name="idCliente" th:field="*{idCliente}"/>
             
-            <label for="nombre">Nombre</label>
+            <label for="nombre">[[#{cliente.nombre}]]</label>
             <input type="text" name="nombre" th:field="*{nombre}"/>
             <br/><!-- comment -->
             
-            <label for="apellidos">Apellido</label>
+            <label for="apellidos">[[#{cliente.apellidos}]]</label>
             <input type="text" name="apellidos" th:field="*{apellidos}"/>
             <br/><!-- comment -->
             
-            <label for="correo">Correo</label>
+            <label for="correo">[[#{cliente.correo}]]</label>
             <input type="email" name="correo" th:field="*{correo}"/>
             <br/><!-- comment -->
             
-            <label for="telefono">Telefono</label>
+            <label for="telefono">[[#{cliente.telefono}]]</label>
             <input type="tel" name="telefono" th:field="*{telefono}"/>
             <br/>
-            <input type="submit" name="guardar" value="Guardar"/>
+            <button type="submit" th:text="#{accion.guardar}"/>
 
         </form>
 
